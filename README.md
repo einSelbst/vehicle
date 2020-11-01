@@ -1,6 +1,6 @@
 # Preact example
 
-This is a fully working example of Next.js 9.5 running on [Preact](https://github.com/preactjs/preact) instead of React.
+This is a fully working example of Next.js 10.0 running on [Preact](https://github.com/preactjs/preact) instead of React.
 
 This reduces the base JavaScript weight of pages to ~22kB.
 
