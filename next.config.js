@@ -4,6 +4,7 @@ const withPreact = require('next-plugin-preact');
 
 module.exports = withPreact({
   experimental: {
+    plugins: true,
     modern: true,
   },
 });
