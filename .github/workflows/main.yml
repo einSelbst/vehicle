@@ -1,14 +1,28 @@
 name: Compressed Size
 
+# https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
 on: [pull_request]
+on:
+  pull_request: 
+    types: [synchronize, opened]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - uses: preactjs/compressed-size-action@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        
+  bundlewatch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # - uses: jackyef/bundlewatch-gh-action@master
+    - uses: jackyef/bundlewatch-gh-action@0.0.6
+      with:
+        build-script: npm run build --if-present
+        bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+
+

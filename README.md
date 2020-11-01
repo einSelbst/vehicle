@@ -46,4 +46,5 @@ Here's how this example repo was set up:
 
 ## Github Action
 
+- https://bundlewatch.io/#/
 - https://github.com/preactjs/compressed-size-action
