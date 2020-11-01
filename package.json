@@ -11,6 +11,7 @@
     "cross-env": "^7.0.2"
   },
   "dependencies": {
+    "@next/plugin-sentry": "kamilogorek/next-plugin-sentry",
     "next": "10.0.0",
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
