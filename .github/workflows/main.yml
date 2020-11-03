@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
+    - run: npm ci
+    # - run: npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
     - uses: preactjs/compressed-size-action@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"

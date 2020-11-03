@@ -44,16 +44,8 @@
     "bundlewatch": {
         "files": [
             {
-                "path": "dist/redux-toolkit.cjs.production.min.js",
-                "maxSize": "6kB"
-            },
-            {
-                "path": "dist/redux-toolkit.umd.min.js",
-                "maxSize": "12kB"
-            },
-            {
-                "path": "dist/redux-toolkit.esm.js",
-                "maxSize": "14kB"
+                "path": ".next/static/chunks/main.js",
+                "maxSize": "4MB"
             }
         ]
     },

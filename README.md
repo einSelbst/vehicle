@@ -42,9 +42,16 @@ Here's how this example repo was set up:
 
 
 
-# CI
+# CI / Automated Testing / code quality
 
 ## Github Action
 
+### Lighthouse
+- https://github.com/OskarAhl/Lighthouse-github-action-comment
+
+### Bundle Analyzer
+- https://github.com/apps/bundle-analyzer
+  
+### Didn't work
 - https://bundlewatch.io/#/
 - https://github.com/preactjs/compressed-size-action
