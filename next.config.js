@@ -102,6 +102,16 @@ module.exports = withPlugins(
             }
             return config
         },
+        // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
+        webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+            // Note: we provide webpack above so you should not `require` it
+            // Perform customizations to webpack config
+            /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
+            config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN }))
+
+            // Important: return the modified config
+            return config
+        },
         basePath,
     }
 );
