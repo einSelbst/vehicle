@@ -108,7 +108,8 @@ module.exports = withPlugins(
             // Note: we provide webpack above so you should not `require` it
             // Perform customizations to webpack config
             /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
-            config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN }))
+            config.plugins.push(new BundleAnalyzerPlugin({  }))
+            /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
 
             // Important: return the modified config
             return config
