@@ -1,8 +1,12 @@
 {
     "name": "nextjs-preact-demo",
     "version": "1.0.0",
+    "engines": {
+        "node": "12.x"
+    },
     "scripts": {
         "dev": "cross-env NODE_ENV=development next",
+        "build": "next build",
         "build:ssg": "cross-env NODE_ENV=production next build && next export -o build",
         "build:ssr": "cross-env NODE_ENV=production next build",
         "start": "cross-env NODE_ENV=production next start",
