@@ -13,6 +13,7 @@
         "vercel-build": "next build"
     },
     "devDependencies": {
+        "@bundle-analyzer/webpack-plugin": "0.5.1",
         "cross-env": "^7.0.2"
     },
     "dependencies": {
