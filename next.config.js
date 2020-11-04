@@ -59,7 +59,13 @@ module.exports = withPlugins(
         /* SPACE_ID: process.env.CONTENTFUL_SPACE_ID, */
         /* ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN, */
         /* }, */
+
+        // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
+        // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         webpack: (config, options) => {
+            // Note: we provide webpack above so you should not `require` it
+            // Perform customizations to webpack config
+
             // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
             // @sentry/node will run in a Node.js environment. @sentry/node will use
             // Node.js-only APIs to catch even more unhandled exceptions.
@@ -98,19 +104,12 @@ module.exports = withPlugins(
                         stripPrefix: ['webpack://_N_E/'],
                         urlPrefix: `~${basePath}/_next`,
                         release: COMMIT_SHA,
-                    })
+                    }),
                 )
+                /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
+                config.plugins.push(new BundleAnalyzerPlugin({  }))
+                /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
             }
-            return config
-        },
-        // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
-        webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-            // Note: we provide webpack above so you should not `require` it
-            // Perform customizations to webpack config
-            /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
-            config.plugins.push(new BundleAnalyzerPlugin({  }))
-            /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
-
             // Important: return the modified config
             return config
         },
