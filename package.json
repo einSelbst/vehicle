@@ -17,7 +17,10 @@
     },
     "dependencies": {
         "@next/plugin-sentry": "kamilogorek/next-plugin-sentry",
+        "@sentry/webpack-plugin": "1.13.0",
+        "@zeit/next-source-maps": "0.0.3",
         "next": "10.0.0",
+        "next-compose-plugins": "2.2.0",
         "next-plugin-preact": "^3.0.3",
         "preact": "^10.5.5",
         "preact-render-to-string": "^5.1.11",
