@@ -65,6 +65,7 @@ module.exports = withPlugins(
         webpack: (config, options) => {
             // Note: we provide webpack above so you should not `require` it
             // Perform customizations to webpack config
+            config.plugins.push(new BundleAnalyzerPlugin({  }))
 
             // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
             // @sentry/node will run in a Node.js environment. @sentry/node will use
@@ -106,10 +107,10 @@ module.exports = withPlugins(
                         release: COMMIT_SHA,
                     }),
                 )
-                /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
-                config.plugins.push(new BundleAnalyzerPlugin({  }))
-                /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
             }
+            // config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
+            // config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN }))
+
             // Important: return the modified config
             return config
         },
