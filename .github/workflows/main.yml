@@ -45,3 +45,13 @@ jobs:
         # build-script: npm run build --if-present
         build-script: "build"
         bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+
+  bw2:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - run: npm run build
+    - run: npm run bundlewatch
+      env:
+        BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}

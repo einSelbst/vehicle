@@ -42,9 +42,12 @@
         "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
     },
     "bundlewatch": {
+        "trackBranches": [
+            "master"
+        ],
         "files": [
             {
-                "path": ".next/static/chunks/main.js",
+                "path": ".next/static/chunks/*.js",
                 "maxSize": "4MB"
             }
         ]

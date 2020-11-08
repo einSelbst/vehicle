@@ -51,7 +51,10 @@ Here's how this example repo was set up:
 
 ### Bundle Analyzer
 - https://github.com/apps/bundle-analyzer
-  
-### Didn't work
-- https://bundlewatch.io/#/
+
+### Compressed Size
 - https://github.com/preactjs/compressed-size-action
+
+### Not working
+- https://bundlewatch.io/#/
+
