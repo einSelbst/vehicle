@@ -23,6 +23,7 @@ jobs:
         exclude: "{**/*.map,**/node_modules/**}"
         minimum-change-threshold: 100
 
+  # basically the same
   build:
     runs-on: ubuntu-latest
     steps:
@@ -33,25 +34,3 @@ jobs:
       uses: preactjs/compressed-size-action@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        
-  bundlewatch:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - uses: jackyef/bundlewatch-gh-action@master
-    # - uses: jackyef/bundlewatch-gh-action@0.0.6
-      with:
-        # build-script: npm run build --if-present
-        # build-script: "build"
-        bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
-
-  bw2:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm run build
-    - run: npm run bundlewatch
-      env:
-        BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
