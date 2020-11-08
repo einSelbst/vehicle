@@ -1,0 +1,36 @@
+name: Compressed Size
+
+# https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
+on:
+  pull_request: 
+    types: [synchronize, opened]
+
+jobs:
+  compressed-size:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: compressed-size-action
+      uses: preactjs/compressed-size-action@v2
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        build-script: "build:ssr"
+        # Any JS files anywhere within a dist directory:
+        pattern: "**/dist/**/*.js"
+        # Always ignore SourceMaps and node_modules:
+        exclude: "{**/*.map,**/node_modules/**}"
+        minimum-change-threshold: 100
+
+  # basically the same
+  compressed-size-2:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    # - run: npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
+    - name: Compressed Size
+      uses: preactjs/compressed-size-action@v2
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"

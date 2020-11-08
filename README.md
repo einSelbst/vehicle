@@ -39,3 +39,22 @@ Here's how this example repo was set up:
 - Install `preact`, uninstall `react` and `react-dom`.
 - Install [preact-compat/react](https://github.com/preact-compat/react) and [preact-compat/react-dom](https://github.com/preact-compat/react-dom) for aliasing.
 - Use an [npm alias](https://github.com/npm/rfcs/blob/latest/implemented/0001-package-aliases.md#detailed-explanation) to replace `react-ssr-prepass` with `preact-ssr-prepass` (also [works](https://twitter.com/sebmck/status/873958247304232961) with Yarn).
+
+
+
+# CI / Automated Testing / code quality
+
+## Github Action
+
+### Lighthouse
+- https://github.com/OskarAhl/Lighthouse-github-action-comment
+
+### Bundle Analyzer
+- https://github.com/apps/bundle-analyzer
+
+### Compressed Size
+- https://github.com/preactjs/compressed-size-action
+
+### BundleWatch
+- https://bundlewatch.io/#/
+
