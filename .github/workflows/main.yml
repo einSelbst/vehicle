@@ -39,11 +39,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm ci
-    # - uses: jackyef/bundlewatch-gh-action@master
-    - uses: jackyef/bundlewatch-gh-action@0.0.6
+    - uses: jackyef/bundlewatch-gh-action@master
+    # - uses: jackyef/bundlewatch-gh-action@0.0.6
       with:
         # build-script: npm run build --if-present
-        build-script: "build"
+        # build-script: "build"
         bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
 
   bw2:
