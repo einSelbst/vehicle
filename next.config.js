@@ -8,6 +8,9 @@ const withSourceMaps = require('@zeit/next-source-maps')({
     devtool: 'hidden-source-map'
 })
 const BundleAnalyzerPlugin = require('@bundle-analyzer/webpack-plugin')
+const BundleStatsPlugin = require('next-plugin-bundle-stats');
+const { StatsWriterPlugin } = require('webpack-stats-plugin')
+const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
@@ -60,14 +63,35 @@ const nextConfig = {
 
     // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
     webpack: (config, options) => {
-    // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+        const { dev, isServer } = options;
+        // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         // Note: we provide webpack above so you should not `require` it
         // Perform customizations to webpack config
         /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
         config.plugins.push(new BundleAnalyzerPlugin({  }))
         /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
 
-
+        // webpack stats output / relative ci bundle stats configs
+        // https://relative-ci.com/documentation/setup/cli/webpack/next
+        config.plugins.push(
+            new StatsWriterPlugin({
+                filename: 'stats.json',
+                stats: {
+                    context: './src', // optional, will improve readability of the paths
+                    assets: true,
+                    entrypoints: true,
+                    chunks: true,
+                    modules: true
+                }
+            })
+        );
+        
+        if (!dev && !isServer) {
+            config.plugins.push(
+                new RelativeCiAgentWebpackPlugin(),
+            );
+        }
+        
         // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
         // @sentry/node will run in a Node.js environment. @sentry/node will use
         // Node.js-only APIs to catch even more unhandled exceptions.
@@ -119,5 +143,6 @@ const nextConfig = {
 module.exports = withPlugins([
     // add plugins here..
     [withSourceMaps],
-    [withPreact]
+    [withPreact],
+    [BundleStatsPlugin]
 ], nextConfig);

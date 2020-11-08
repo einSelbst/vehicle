@@ -58,3 +58,11 @@ Here's how this example repo was set up:
 ### BundleWatch
 - https://bundlewatch.io/#/
 
+### BundleStats
+- https://github.com/relative-ci/bundle-stats
+
+### LGTM
+- https://lgtm.com/
+
+### Renovate
+- https://medium.com/guidesmiths-dev/using-github-actions-and-renovate-app-to-safely-update-dependencies-automatically-b95a16e0a56a

@@ -15,6 +15,7 @@
     },
     "devDependencies": {
         "@bundle-analyzer/webpack-plugin": "0.5.1",
+        "@relative-ci/agent": "1.4.0",
         "bundlewatch": "0.3.1",
         "cross-env": "^7.0.2",
         "eslint": "^6.8.0",
@@ -26,7 +27,8 @@
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-react": "7.20.0",
         "eslint-plugin-react-hooks": "^2.5.0",
-        "eslint-plugin-standard": "^4.0.1"
+        "eslint-plugin-standard": "^4.0.1",
+        "webpack-stats-plugin": "1.0.2"
     },
     "dependencies": {
         "@next/plugin-sentry": "kamilogorek/next-plugin-sentry",
@@ -34,6 +36,7 @@
         "@zeit/next-source-maps": "0.0.3",
         "next": "10.0.0",
         "next-compose-plugins": "2.2.0",
+        "next-plugin-bundle-stats": "2.3.0",
         "next-plugin-preact": "^3.0.3",
         "preact": "^10.5.5",
         "preact-render-to-string": "^5.1.11",
