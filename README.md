@@ -55,6 +55,6 @@ Here's how this example repo was set up:
 ### Compressed Size
 - https://github.com/preactjs/compressed-size-action
 
-### Not working
+### BundleWatch
 - https://bundlewatch.io/#/
 
