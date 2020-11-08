@@ -26,8 +26,10 @@ jobs:
         # show-total: false
         # compression: brotli
         # Always ignore SourceMaps and node_modules:
-        exclude: "{**/*.map,**/node_modules/**}"
-        strip-hash: "\\-(\\w{20})\\."
+        # exclude: "{**/*.map,**/node_modules/**}"
+        exclude: "{.next/cache/**}"
+        strip-hash: "[-|/](\\w{20})[o|.]"
+        # strip-hash: "\\-(\\w{20})\\."
         # Ignore changes of less than 100 bytes
         minimum-change-threshold: 100
 
