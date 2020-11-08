@@ -58,3 +58,5 @@ Here's how this example repo was set up:
 ### BundleWatch
 - https://bundlewatch.io/#/
 
+### BundleStats
+- https://github.com/relative-ci/bundle-stats

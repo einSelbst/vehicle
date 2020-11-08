@@ -8,6 +8,7 @@ const withSourceMaps = require('@zeit/next-source-maps')({
     devtool: 'hidden-source-map'
 })
 const BundleAnalyzerPlugin = require('@bundle-analyzer/webpack-plugin')
+const BundleStatsPlugin = require('next-plugin-bundle-stats');
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
@@ -119,5 +120,6 @@ const nextConfig = {
 module.exports = withPlugins([
     // add plugins here..
     [withSourceMaps],
-    [withPreact]
+    [withPreact],
+    [BundleStatsPlugin]
 ], nextConfig);
