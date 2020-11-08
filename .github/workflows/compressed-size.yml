@@ -24,7 +24,7 @@ jobs:
         minimum-change-threshold: 100
 
   # basically the same
-  build:
+  compressed-size-2:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

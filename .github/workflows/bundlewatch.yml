@@ -1,4 +1,4 @@
-name: Compressed Size
+name: BundleWatch
 
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
 on:
@@ -18,7 +18,7 @@ jobs:
         # build-script: "build"
         bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
 
-  bw2:
+  bundlewatch-2:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
