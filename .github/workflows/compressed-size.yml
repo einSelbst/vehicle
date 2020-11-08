@@ -18,7 +18,7 @@ jobs:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         build-script: "build:ssr"
         # Any JS files anywhere within a dist directory:
-        pattern: "**/dist/**/*.js"
+        pattern: ".next/static/**/*.js"
         # Always ignore SourceMaps and node_modules:
         exclude: "{**/*.map,**/node_modules/**}"
         minimum-change-threshold: 100
