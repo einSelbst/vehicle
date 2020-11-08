@@ -61,7 +61,7 @@ const nextConfig = {
 
     // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
     webpack: (config, options) => {
-    // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+        // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         // Note: we provide webpack above so you should not `require` it
         // Perform customizations to webpack config
         /* config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//)) */
@@ -69,6 +69,21 @@ const nextConfig = {
         /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
 
 
+        // webpack stats output
+        // https://relative-ci.com/documentation/setup/cli/webpack/next
+        config.plugins.push(
+            new StatsWriterPlugin({
+                filename: 'stats.json',
+                stats: {
+                    context: './src', // optional, will improve readability of the paths
+                    assets: true,
+                    entrypoints: true,
+                    chunks: true,
+                    modules: true
+                }
+            })
+        );
+        
         // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
         // @sentry/node will run in a Node.js environment. @sentry/node will use
         // Node.js-only APIs to catch even more unhandled exceptions.
