@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run bundle-stats
-      uses: vio/bundle-stats-action@v1
+      uses: vio/bundle-stats-action@v1.1.0
       with:
         webpack-stats-path: 'static/stats.json'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
