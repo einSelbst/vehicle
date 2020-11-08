@@ -9,10 +9,11 @@ jobs:
   compressed-size:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2-beta
+    - name: Check out the application's source code
+      uses: actions/checkout@v2-beta
       with:
         fetch-depth: 1
-    - name: compressed-size-action
+    - name: Check and report changes in the application's package size
       uses: preactjs/compressed-size-action@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -20,8 +21,13 @@ jobs:
         # Any JS files anywhere within a dist directory:
         # pattern: ".next/static/**/*.js"
         pattern: ".next/**/*.{css,js,json,html}"
+        # pattern: "{build/**/*.js,build/**/*.css}" # multiple paths
+        # compression: none
+        # show-total: false
+        # compression: brotli
         # Always ignore SourceMaps and node_modules:
         exclude: "{**/*.map,**/node_modules/**}"
+        strip-hash: "\\-(\\w{20})\\."
         # Ignore changes of less than 100 bytes
         minimum-change-threshold: 100
 
