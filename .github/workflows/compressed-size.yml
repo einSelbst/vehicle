@@ -24,13 +24,13 @@ jobs:
         minimum-change-threshold: 100
 
   # basically the same
-  compressed-size-2:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    # - run: npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
-    - name: Compressed Size
-      uses: preactjs/compressed-size-action@v2
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+  # compressed-size-2:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - run: npm ci
+  #   # - run: npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
+  #   - name: Compressed Size
+  #     uses: preactjs/compressed-size-action@v2
+  #     with:
+  #       repo-token: "${{ secrets.GITHUB_TOKEN }}"
