@@ -9,6 +9,8 @@ const withSourceMaps = require('@zeit/next-source-maps')({
 })
 const BundleAnalyzerPlugin = require('@bundle-analyzer/webpack-plugin')
 const BundleStatsPlugin = require('next-plugin-bundle-stats');
+const { StatsWriterPlugin } = require('webpack-stats-plugin')
+const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
@@ -61,6 +63,7 @@ const nextConfig = {
 
     // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
     webpack: (config, options) => {
+        const { dev, isServer } = options;
         // webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         // Note: we provide webpack above so you should not `require` it
         // Perform customizations to webpack config
@@ -68,8 +71,7 @@ const nextConfig = {
         config.plugins.push(new BundleAnalyzerPlugin({  }))
         /* config.plugins.push(new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })) */
 
-
-        // webpack stats output
+        // webpack stats output / relative ci bundle stats configs
         // https://relative-ci.com/documentation/setup/cli/webpack/next
         config.plugins.push(
             new StatsWriterPlugin({
@@ -83,6 +85,12 @@ const nextConfig = {
                 }
             })
         );
+        
+        if (!dev && !isServer) {
+            config.plugins.push(
+                new RelativeCiAgentWebpackPlugin(),
+            );
+        }
         
         // In `pages/_app.js`, Sentry is imported from @sentry/browser. While
         // @sentry/node will run in a Node.js environment. @sentry/node will use
