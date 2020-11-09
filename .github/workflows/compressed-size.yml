@@ -26,8 +26,8 @@ jobs:
         # show-total: false
         # compression: brotli
         # Always ignore SourceMaps and node_modules:
-        exclude: "{**/*.map,**/cache/**}"
-        # exclude: "{**/cache/**}"
+        # exclude: "{**/*.map,**/cache/**}"
+        exclude: "**/cache/**"
         strip-hash: "[\\/\\.-](\\w{20,21})[\\.\\/]"
         # Ignore changes of less than 100 bytes
         minimum-change-threshold: 100
