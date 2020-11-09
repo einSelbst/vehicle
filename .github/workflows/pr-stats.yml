@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - uses: ./.github/actions/next-stats-action
-      - uses: https://github.com/vercel/next.js/tree/canary/.github/actions/next-stats-action
+      - uses: vercel/next.js/tree/canary/.github/actions/next-stats-action
