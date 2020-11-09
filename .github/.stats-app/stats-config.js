@@ -9,11 +9,11 @@ const StatsConfig = {
     appBuildCommand: string,
     appStartCommand: string | undefined,
     // the main branch to compare against (what PRs will be merging into)
-    mainBranch: 'canary',
+    mainBranch: 'master',
     // the main repository path (relative to https://github.com/)
-    mainRepo: 'vercel/next.js',
+    mainRepo: 'einSelbst/vehicles',
     // whether to attempt auto merging the main branch into PR before running stats
-    autoMergeMain: boolean | undefined,
+    autoMergeMain: true,
     // an array of configs for each run
     configs: [
         { // first run's config
