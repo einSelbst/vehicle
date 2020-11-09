@@ -61,6 +61,12 @@ const nextConfig = {
     /* ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN, */
     /* }, */
 
+    // https://nextjs.org/blog/next-10#internationalized-routing
+    i18n: {
+        locales: ['en', 'nl'],
+        defaultLocale: 'en'
+    },
+    
     // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
     webpack: (config, options) => {
         const { dev, isServer } = options;
