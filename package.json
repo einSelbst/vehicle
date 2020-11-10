@@ -14,7 +14,7 @@
         "start": "cross-env NODE_ENV=production next start",
         "bundlewatch": "bundlewatch || true",
         "vercel-build": "next build",
-        "format": "prettier-standard --format",
+        "format": "prettier-standard --format"
     },
     "lint-staged": {
         "*": [
@@ -48,6 +48,19 @@
         "react": "npm:@preact/compat@0.0.3",
         "react-dom": "npm:@preact/compat@0.0.3",
         "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.2"
+    },
+    "browserslist": {
+        "development": [
+            "last 2 chrome versions",
+            "last 2 firefox versions",
+            "last 2 edge versions"
+        ],
+        "production": [
+            ">1%",
+            "last 4 versions",
+            "Firefox ESR",
+            "not ie < 11"
+        ]
     },
     "bundlewatch": {
         "trackBranches": [
