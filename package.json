@@ -1,6 +1,7 @@
 {
-    "name": "nextjs-preact-demo",
+    "name": "nextjs-ci-tools",
     "version": "1.0.0",
+    "repository": "git@github.com:StarpTech/next-localization.git",
     "engines": {
         "node": "12.x"
     },
