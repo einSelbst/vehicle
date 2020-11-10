@@ -36,7 +36,7 @@
         "@sentry/webpack-plugin": "1.13.0",
         "@zeit/next-source-maps": "0.0.3",
         "next": "10.0.1",
-        "next-compose-plugins": "2.2.0",
+        "next-compose-plugins": "2.2.1",
         "next-plugin-bundle-stats": "2.3.0",
         "next-plugin-preact": "3.0.3",
         "preact": "10.5.5",
