@@ -1,9 +1,9 @@
-export default function SSG({ framework }) {
+export default function SSG ({ framework }) {
   return <div>{framework} ssg example</div>
 }
 
-export function getStaticProps() {
+export function getStaticProps () {
   return {
-    props: { framework: 'preact' },
+    props: { framework: 'preact' }
   }
 }

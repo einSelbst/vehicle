@@ -2,28 +2,28 @@ name: BundleWatch
 
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
 on:
-  pull_request: 
+  pull_request:
     types: [synchronize, opened]
 
-jobs:        
+jobs:
   bundlewatch:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    # - uses: jackyef/bundlewatch-gh-action@master
-    # - uses: jackyef/bundlewatch-gh-action@0.0.6
+      - uses: actions/checkout@v2
+      - run: npm ci
+      # - uses: jackyef/bundlewatch-gh-action@master
+      # - uses: jackyef/bundlewatch-gh-action@0.0.6
       # with:
-        # build-script: npm run build --if-present
-        # build-script: "build"
-        # bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+      # build-script: npm run build --if-present
+      # build-script: "build"
+      # bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
 
-  # bundlewatch-2:
-    # runs-on: ubuntu-latest
-    # steps:
-    # - uses: actions/checkout@v2
-    # - run: npm ci
-    - run: npm run build
-    - run: npm run bundlewatch
-      env:
-        BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+      # bundlewatch-2:
+      # runs-on: ubuntu-latest
+      # steps:
+      # - uses: actions/checkout@v2
+      # - run: npm ci
+      - run: npm run build
+      - run: npm run bundlewatch
+        env:
+          BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}

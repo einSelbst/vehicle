@@ -1,78 +1,78 @@
 {
-    "name": "nextjs-ci-tools",
-    "version": "1.0.0",
-    "repository": "git@github.com:StarpTech/next-localization.git",
-    "engines": {
-        "node": "12.x"
-    },
-    "scripts": {
-        "dev": "cross-env NODE_ENV=development next",
-        "prebuild": "npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat",
-        "build": "next build",
-        "build:ssg": "cross-env NODE_ENV=production next build && next export -o build",
-        "build:ssr": "cross-env NODE_ENV=production next build",
-        "start": "cross-env NODE_ENV=production next start",
-        "bundlewatch": "bundlewatch || true",
-        "vercel-build": "next build",
-        "format": "prettier-standard --format"
-    },
-    "lint-staged": {
-        "*": [
-            "prettier-standard --lint"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "devDependencies": {
-        "@bundle-analyzer/webpack-plugin": "0.5.1",
-        "@relative-ci/agent": "1.4.0",
-        "bundlewatch": "0.3.1",
-        "cross-env": "7.0.2",
-        "eslint-plugin-cypress": "2.11.2",
-        "eslint-plugin-jsx-a11y": "6.4.1",
-        "prettier-standard": "16.4.1",
-        "webpack-stats-plugin": "1.0.2"
-    },
-    "dependencies": {
-        "@next/plugin-sentry": "kamilogorek/next-plugin-sentry",
-        "@sentry/webpack-plugin": "1.13.0",
-        "@zeit/next-source-maps": "0.0.3",
-        "next": "10.0.1",
-        "next-compose-plugins": "2.2.1",
-        "next-plugin-bundle-stats": "2.3.0",
-        "next-plugin-preact": "3.0.3",
-        "preact": "10.5.5",
-        "preact-render-to-string": "5.1.11",
-        "react": "npm:@preact/compat@0.0.3",
-        "react-dom": "npm:@preact/compat@0.0.3",
-        "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.2"
-    },
-    "browserslist": {
-        "development": [
-            "last 2 chrome versions",
-            "last 2 firefox versions",
-            "last 2 edge versions"
-        ],
-        "production": [
-            ">1%",
-            "last 4 versions",
-            "Firefox ESR",
-            "not ie < 11"
-        ]
-    },
-    "bundlewatch": {
-        "trackBranches": [
-            "master"
-        ],
-        "files": [
-            {
-                "path": ".next/static/chunks/*.js",
-                "maxSize": "4MB"
-            }
-        ]
-    },
-    "license": "UNLICENSED"
+  "name": "nextjs-ci-tools",
+  "version": "1.0.0",
+  "repository": "git@github.com:StarpTech/next-localization.git",
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development next",
+    "prebuild": "npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat",
+    "build": "next build",
+    "build:ssg": "cross-env NODE_ENV=production next build && next export -o build",
+    "build:ssr": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production next start",
+    "bundlewatch": "bundlewatch || true",
+    "vercel-build": "next build",
+    "format": "prettier-standard --format"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier-standard --lint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@bundle-analyzer/webpack-plugin": "0.5.1",
+    "@relative-ci/agent": "1.4.0",
+    "bundlewatch": "0.3.1",
+    "cross-env": "7.0.2",
+    "eslint-plugin-cypress": "2.11.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "prettier-standard": "16.4.1",
+    "webpack-stats-plugin": "1.0.2"
+  },
+  "dependencies": {
+    "@next/plugin-sentry": "kamilogorek/next-plugin-sentry",
+    "@sentry/webpack-plugin": "1.13.0",
+    "@zeit/next-source-maps": "0.0.3",
+    "next": "10.0.1",
+    "next-compose-plugins": "2.2.1",
+    "next-plugin-bundle-stats": "2.3.0",
+    "next-plugin-preact": "3.0.3",
+    "preact": "10.5.5",
+    "preact-render-to-string": "5.1.11",
+    "react": "npm:@preact/compat@0.0.3",
+    "react-dom": "npm:@preact/compat@0.0.3",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.2"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "bundlewatch": {
+    "trackBranches": [
+      "master"
+    ],
+    "files": [
+      {
+        "path": ".next/static/chunks/*.js",
+        "maxSize": "4MB"
+      }
+    ]
+  },
+  "license": "UNLICENSED"
 }
