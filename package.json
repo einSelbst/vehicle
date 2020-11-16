@@ -12,6 +12,7 @@
     "build:ssg": "cross-env NODE_ENV=production next build && next export -o build",
     "build:ssr": "cross-env NODE_ENV=production next build",
     "start": "cross-env NODE_ENV=production next start",
+    "serve:lhci": "npm run start",
     "bundlewatch": "bundlewatch || true",
     "vercel-build": "next build",
     "format": "prettier-standard --format"
