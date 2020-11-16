@@ -1,5 +1,6 @@
 ci:
   collect:
+    staticDistDir: './.next/'
 
   assert:
     preset: "lighthouse:recommended"
