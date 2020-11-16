@@ -1,6 +1,6 @@
 ci:
   collect:
-    startServerCommand: "npm run start",
+    startServerCommand: "npm run start"
     startServerReadyPattern: "ready on"
 
   assert:
