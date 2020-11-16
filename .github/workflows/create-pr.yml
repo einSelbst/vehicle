@@ -7,10 +7,15 @@ jobs:
     steps:
     - uses: actions/checkout@1.0.0
 
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         head: ${{ github.ref }}
         base: master
-        # title: "An automatically created PR!"
+        title: ${{ steps.extract_branch.outputs.branch }} || "An automatically created PR!"
