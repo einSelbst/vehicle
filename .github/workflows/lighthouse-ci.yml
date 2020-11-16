@@ -1,4 +1,5 @@
 name: Lighthouse CI
+# https://github.com/GoogleChrome/lighthouse-ci
 
 on: [push]
 
@@ -20,8 +21,7 @@ jobs:
       - name: npm install, build
         run: |
           npm ci
-          npm run build
           npm install -g @lhci/cli@0.6.x
-      - run: lhci healthcheck --fatal --checks=githubToken
+          npm run build
       - name: run Lighthouse CI
         run: lhci autorun
