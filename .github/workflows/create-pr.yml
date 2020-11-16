@@ -18,4 +18,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         head: ${{ github.ref }}
         base: master
-        title: ${{ steps.extract_branch.outputs.branch }} || "An automatically created PR!"
+        title: ${{ steps.extract_branch.outputs.branch }}
