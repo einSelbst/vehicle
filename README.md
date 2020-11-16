@@ -49,6 +49,7 @@ Here's how this example repo was set up:
 ### Lighthouse
 
 - https://github.com/OskarAhl/Lighthouse-github-action-comment
+- https://github.com/treosh/lighthouse-ci-action
 
 ### Bundle Analyzer
 
