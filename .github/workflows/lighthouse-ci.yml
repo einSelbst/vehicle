@@ -2,6 +2,9 @@ name: Lighthouse CI
 
 on: [push]
 
+env:
+  LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
 jobs:
   lhci:
     name: Lighthouse
@@ -22,5 +25,3 @@ jobs:
       - run: lhci healthcheck --fatal --checks=githubToken
       - name: run Lighthouse CI
         run: lhci autorun
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
