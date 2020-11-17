@@ -2,9 +2,9 @@ name: "Create PR"
 # https://github.com/thomaseizinger/create-pull-request
 
 on:
-  push:
+  create:
     branches:
-      types: [created]
+      - "**"
 
 jobs:
   create-pr-on-push:
