@@ -1,5 +1,8 @@
 name: "Create PR"
-on: push
+
+on:
+  branch:
+    types: [created]
 
 jobs:
   create-pr-on-push:
