@@ -89,9 +89,15 @@ Here's how this example repo was set up:
 
 - https://github.com/thomaseizinger/create-pull-request
 
+### detect secrets
+
+- https://github.com/marketplace/actions/easy-detect-secrets
+
 ### under consideration
 
 - https://github.com/peter-evans/create-pull-request
+- https://github.com/hattan/verify-linked-issue-action
+- https://github.com/marketplace/actions/clean-commit
 
 ## License
 
