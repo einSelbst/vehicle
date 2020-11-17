@@ -1,8 +1,8 @@
+name: Generate Pull Request Stats
+
 on:
   pull_request:
     types: [opened, synchronize]
-
-name: Generate Pull Request Stats
 
 jobs:
   stats:

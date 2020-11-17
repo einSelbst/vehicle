@@ -85,6 +85,14 @@ Here's how this example repo was set up:
 
 - https://github.com/sheerun/prettier-standard#readme
 
+### auto create pull requests
+
+- https://github.com/thomaseizinger/create-pull-request
+
+### under consideration
+
+- https://github.com/peter-evans/create-pull-request
+
 ## License
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FeinSelbst%2Fvehicle.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FeinSelbst%2Fvehicle?ref=badge_large)
