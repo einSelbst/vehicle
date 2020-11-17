@@ -1,8 +1,8 @@
+name: Generate Pull Request Stats
+
 on:
   pull_request:
     types: [opened, synchronize]
-
-name: Generate Pull Request Stats
 
 jobs:
   stats:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - uses: ./.github/actions/next-stats-action
-      - uses: vercel/next-stats-action@master
+      # - uses: vercel/next-stats-action@master
