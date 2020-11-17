@@ -93,11 +93,17 @@ Here's how this example repo was set up:
 
 - https://github.com/marketplace/actions/easy-detect-secrets
 
+### release notes preview
+
+- https://github.com/marketplace/actions/release-notes-preview
+
 ### under consideration
 
 - https://github.com/peter-evans/create-pull-request
 - https://github.com/hattan/verify-linked-issue-action
 - https://github.com/marketplace/actions/clean-commit
+- https://github.com/marketplace/actions/merge-me
+- https://github.com/marketplace/actions/npm-audit-pr
 
 ## License
 
