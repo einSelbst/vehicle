@@ -1,9 +1,9 @@
+# https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
 name: Compressed Size
 
-# https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
 on:
   pull_request:
-    types: [synchronize, opened]
+    types: [assigned, opened, synchronize, reopened]
 
 jobs:
   compressed-size:
