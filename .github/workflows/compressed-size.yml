@@ -1,5 +1,5 @@
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#configuring-workflow-events
-name: Compressed Size
+name: CompressedSize
 
 on:
   pull_request:
