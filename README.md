@@ -104,6 +104,10 @@ Here's how this example repo was set up:
 - https://github.com/marketplace/actions/clean-commit
 - https://github.com/marketplace/actions/merge-me
 - https://github.com/marketplace/actions/npm-audit-pr
+- https://github.com/marketplace/actions/labeler
+- https://github.com/marketplace/actions/create-a-release
+- https://github.com/marketplace/actions/milestone-closer
+- https://github.com/marketplace/actions/wakatime-stat-update-action
 
 ## License
 

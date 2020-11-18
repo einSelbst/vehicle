@@ -5,6 +5,7 @@ on:
   create:
     branches:
       - "**"
+      - "!renovate/*"
 
 jobs:
   create-pr-on-push:
