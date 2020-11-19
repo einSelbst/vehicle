@@ -6,6 +6,7 @@ on:
     branches:
       - "**"
       - "!renovate/*"
+      - "!einSelbst-*"
 
 jobs:
   create-pr-on-push:
