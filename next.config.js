@@ -16,6 +16,7 @@ const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent')
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
+  SENTRY_RELEASE,
   SENTRY_ORG,
   SENTRY_PROJECT,
   SENTRY_AUTH_TOKEN,
@@ -25,12 +26,13 @@ const {
   VERCEL_BITBUCKET_COMMIT_SHA
 } = process.env
 
+//Get the commit sha from either Github, Gitlab, or Bitbucket
 const COMMIT_SHA =
   VERCEL_GITHUB_COMMIT_SHA ||
   VERCEL_GITLAB_COMMIT_SHA ||
   VERCEL_BITBUCKET_COMMIT_SHA
 
-process.env.SENTRY_DSN = SENTRY_DSN
+//process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
 const nextConfig = {
