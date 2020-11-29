@@ -18,9 +18,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: npm install, build
+      - uses: bahmutov/npm-install@v1
+      - name: npm install lighthouse, build
         run: |
-          npm ci
           npm install -g @lhci/cli@0.6.x
           npm run build
       - name: run Lighthouse CI
