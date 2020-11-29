@@ -2,6 +2,8 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FeinSelbst%2Fvehicle.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FeinSelbst%2Fvehicle?ref=badge_shield)
 
+![Prettier](https://github.com/einSelbst/vehicle/workflows/Prettier/badge.svg)
+
 This is a fully working example of Next.js 10.0 running on [Preact](https://github.com/preactjs/preact) instead of React.
 
 This reduces the base JavaScript weight of pages to ~22kB.
