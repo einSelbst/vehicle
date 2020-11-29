@@ -1,4 +1,4 @@
-name: "Sentry release"
+name: 'Sentry release'
 
 on:
   pull_request:
