@@ -1,13 +1,45 @@
-name: Prettier
+name: Linting
 on: [push]
+
+ # jobs:
+ #  build:
+ #    name: Prettier
+ #    runs-on: ubuntu-latest
+ #    steps:
+ #      - uses: actions/checkout@v1
+
+ #      - name: Cache node modules
+ #        uses: actions/cache@v1
+ #        with:
+ #          path: ~/.npm
+ #          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+ #          restore-keys: |
+ #            ${{ runner.os }}-node-
+ #      - run: npm ci
+ #      - run: npm run format
+ #      - run: git status
+ #      # commit any changed files
+ #      # https://github.com/mikeal/publish-to-github-action
+ #      - uses: mikeal/publish-to-github-action@master
+ #        env:
+ #          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+
 
 jobs:
   build:
-    name: Prettier
+    name: Run ESLint & Prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      
+      # Check out the repository
+      - uses: actions/checkout@v2
 
+      # Install Node.js
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # Cache deps
       - name: Cache node modules
         uses: actions/cache@v1
         with:
@@ -15,9 +47,18 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      # Install your dependencies
       - run: npm ci
+
+      # Run ESLint
+      - uses: eslint/github-action@v0
+
+      # Run Prettier
       - run: npm run format
+
       - run: git status
+
       # commit any changed files
       # https://github.com/mikeal/publish-to-github-action
       - uses: mikeal/publish-to-github-action@master
