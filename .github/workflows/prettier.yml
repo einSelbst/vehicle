@@ -52,7 +52,7 @@ jobs:
       - run: npm ci
 
       # Run ESLint
-      - uses: eslint/github-action@v0
+      - uses: eslint/github-action@master
 
       # Run Prettier
       - run: npm run format
