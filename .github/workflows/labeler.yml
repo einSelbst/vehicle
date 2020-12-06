@@ -3,7 +3,8 @@ name: "Pull Request Labeler"
 # see https://github.com/marketplace/actions/labeler
 
 on:
-- pull_request_target
+  pull_request
+  # pull_request_target
 
 jobs:
   triage:
