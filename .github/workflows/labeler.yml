@@ -1,4 +1,4 @@
-name: "Pull Request Labeler"
+name: 'Pull Request Labeler'
 
 # see https://github.com/marketplace/actions/labeler
 
@@ -10,7 +10,7 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@main
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        sync-label: true
+      - uses: actions/labeler@main
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          sync-label: true
