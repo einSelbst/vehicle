@@ -1,0 +1,23 @@
+name: Github actions on pull request review
+# see https://github.community/t/how-to-get-the-target-branch-name-using-pull-request-review-event-on-github-actions/121875/2
+
+on:
+    pull_request_review
+    # pull_request_review:
+      # types: [submitted]
+
+jobs:
+  Job1:
+    name: Job1
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.base.ref == 'master'   # check the target branch if it's master
+    steps:
+        - name: trigger
+          run: echo "Hii"
+  Job2:
+    name: Job2
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.base.ref != 'master' # check the target branch if it's master
+    steps:
+        - name: trigger
+          run: echo "Hello"
