@@ -19,3 +19,6 @@ source:
 frontend:
   - any: ['src/**/*.js']
     all: ['!src/main.js']
+
+automation:
+  - any: ['.github/workflows/**.yml']
