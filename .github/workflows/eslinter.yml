@@ -37,8 +37,8 @@ jobs:
 
       - name: Install eslint
         run: |
-          npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
           npm ci
+          npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
           npm i -g eslint
           npm i --save-dev eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
 

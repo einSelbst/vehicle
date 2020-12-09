@@ -25,6 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Install your dependencies
+      - run: |
+          npm ci
+          npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
+          npm i -g eslint
+          npm i --save-dev eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+
       - name: Run eslint with reviewdog
         # https://github.com/marketplace/actions/run-eslint-with-reviewdog
         # You may pin to the exact commit or the version.
