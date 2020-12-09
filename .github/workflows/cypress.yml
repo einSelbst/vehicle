@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: |
-          npm i -g cypress
+          npm i cypress
 
       - name: Cypress.io
         # You may pin to the exact commit or the version.
