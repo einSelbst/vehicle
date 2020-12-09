@@ -40,7 +40,7 @@ jobs:
           npm ci
           npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
           npm i -g eslint
-          npm i --save-dev eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+          npm i --save eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
 
       - name: ESLint (JS/TS) Action
         # https://github.com/marketplace/actions/eslint-js-ts-action

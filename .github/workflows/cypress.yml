@@ -24,12 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - run: |
+          npm i -g cypress
 
       - name: Cypress.io
         # You may pin to the exact commit or the version.
         # uses: cypress-io/github-action@027472b83d191a6d1306a40718ebce8253e4cc43
-        uses: cypress-io/github-action@v2.7.0
+        uses: cypress-io/github-action@v2
         with:
+          install-command: npm ci
           # Sends test results to Cypress Dashboard
           record: # optional
           # Set configuration values. Separate multiple values with a comma. The values set here override any values set in your configuration file.
