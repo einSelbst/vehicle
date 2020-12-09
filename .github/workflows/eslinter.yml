@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
 
       - name: Install eslint
-        uses: npm -g eslint
+        uses: npm i --save-dev eslint eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
 
       - name: ESLint (JS/TS) Action
         # https://github.com/marketplace/actions/eslint-js-ts-action
