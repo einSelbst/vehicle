@@ -27,9 +27,10 @@ jobs:
 
       # Install your dependencies
       - run: |
-          npm ci
           npm i --save react@npm:@preact/compat react-dom@npm:@preact/compat
-          npm i --save-dev eslint eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+          npm ci
+          npm i -g eslint
+          npm i --save-dev eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
 
       # Run ESLint
       - name: Run ESLint
