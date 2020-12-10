@@ -1,6 +1,8 @@
 const withPlugins = require('next-compose-plugins')
+/* eslint-disable no-unused-vars */
 const withPrefresh = require('@prefresh/next')
 const preact = require('preact')
+/* eslint-enable no-unused-vars */
 const withPreact = require('next-plugin-preact')
 // Use the hidden-source-map option when you don't want the source maps to be
 // publicly available on the servers, only to the error reporting
@@ -16,7 +18,7 @@ const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent')
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
-  SENTRY_RELEASE,
+  SENTRY_RELEASE, // eslint-disable-line no-unused-vars
   SENTRY_ORG,
   SENTRY_PROJECT,
   SENTRY_AUTH_TOKEN,

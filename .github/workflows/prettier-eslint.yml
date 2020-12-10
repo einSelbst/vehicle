@@ -7,7 +7,6 @@ jobs:
     name: Run ESLint & Prettier
     runs-on: ubuntu-latest
     steps:
-
       # Check out the repository
       - uses: actions/checkout@v2
 
@@ -26,7 +25,8 @@ jobs:
             ${{ runner.os }}-node-
 
       # Install your dependencies
-      - run: npm ci
+      - run: |
+          npm ci
 
       # Run ESLint
       - name: Run ESLint
@@ -41,4 +41,4 @@ jobs:
       # https://github.com/mikeal/publish-to-github-action
       - uses: mikeal/publish-to-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}

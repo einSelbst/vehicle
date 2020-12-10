@@ -35,8 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Install eslint
-        uses: npm -g eslint
+      - run: |
+          npm ci
 
       - name: ESLint (JS/TS) Action
         # https://github.com/marketplace/actions/eslint-js-ts-action
