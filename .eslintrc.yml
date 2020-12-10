@@ -1,9 +1,11 @@
 env:
   browser: true
   es6: true
+  amd: true
 extends:
   - 'eslint:recommended'
   - 'plugin:react/recommended'
+  - 'preact'
   - 'plugin:@typescript-eslint/eslint-recommended'
 globals:
   Atomics: readonly
