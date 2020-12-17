@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
         if: |
-          startsWith(github.head_ref, 'einselbst') == false ||
+          startsWith(github.head_ref, 'einselbst') == false &&
           startsWith(github.head_ref, 'renovate') == false
 
       - name: Extract branch name
         if: |
-          startsWith(github.head_ref, 'einselbst') == false ||
+          startsWith(github.head_ref, 'einselbst') == false &&
           startsWith(github.head_ref, 'renovate') == false
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -25,7 +25,7 @@ jobs:
 
       - name: Create pull request
         if: |
-          startsWith(github.head_ref, 'einselbst') == false ||
+          startsWith(github.head_ref, 'einselbst') == false &&
           startsWith(github.head_ref, 'renovate') == false
         uses: thomaseizinger/create-pull-request@master
         with:
