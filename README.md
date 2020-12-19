@@ -87,6 +87,7 @@ Here's how this example repo was set up:
 
 - https://github.com/sheerun/prettier-standard#readme
 
+
 ### auto create pull requests
 
 - https://github.com/thomaseizinger/create-pull-request
@@ -102,6 +103,10 @@ Here's how this example repo was set up:
 ### add labels to pull requests automatically
 
 - https://github.com/actions/labeler
+
+### OWASP
+
+- https://github.com/marketplace/actions/owasp-zap-full-scan
 
 ### under consideration
 
