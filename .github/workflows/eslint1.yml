@@ -27,7 +27,7 @@ jobs:
 
       # Install your dependencies
       - run: |
-          npm ci
+          npm ci --no-audit --prefer-offline
 
       - name: Run eslint with reviewdog
         # https://github.com/marketplace/actions/run-eslint-with-reviewdog

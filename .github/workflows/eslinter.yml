@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
 
       - run: |
-          npm ci
+          npm ci --no-audit --prefer-offline
 
       - name: ESLint (JS/TS) Action
         # https://github.com/marketplace/actions/eslint-js-ts-action

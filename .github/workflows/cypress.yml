@@ -32,7 +32,7 @@ jobs:
         # uses: cypress-io/github-action@027472b83d191a6d1306a40718ebce8253e4cc43
         uses: cypress-io/github-action@v2
         with:
-          install-command: npm ci
+          install-command: npm ci --no-audit --prefer-offline
           # Sends test results to Cypress Dashboard
           record: # optional
           # Set configuration values. Separate multiple values with a comma. The values set here override any values set in your configuration file.
