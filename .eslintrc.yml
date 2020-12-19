@@ -13,10 +13,11 @@ globals:
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
-    jsx: true
+    jsx: true # needed for eslint-plugin-react
   ecmaVersion: 2018
   sourceType: module
 plugins:
-  - react
   - '@typescript-eslint'
+  - react
+  - prettier
 rules: {}

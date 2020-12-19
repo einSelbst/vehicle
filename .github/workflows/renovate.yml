@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Install project
-        run: npm ci
+        run: npm ci --no-audit --prefer-offline
       - name: Build the project
         run: npm run build --if-present
       - name: Run tests
