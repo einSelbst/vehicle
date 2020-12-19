@@ -13,11 +13,11 @@ jobs:
       # - name: Configure files
       # run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
       - name: Setup Node.js v14
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2
         with:
           node-version: 14
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --prefer-offline
       - name: Run TypeScript Compiler
         uses: icrawl/action-tsc@v1
   lint:
@@ -29,10 +29,13 @@ jobs:
       # - name: Configure files
       # run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
       - name: Setup Node.js v14
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2
         with:
           node-version: 14
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --prefer-offline
       - name: Run ESLint
         uses: icrawl/action-eslint@v1
+        # with:
+          # Custom glob to overwrite which files to lint.
+          # custom-glob: # optional, default is src
