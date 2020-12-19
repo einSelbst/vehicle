@@ -87,7 +87,6 @@ Here's how this example repo was set up:
 
 - https://github.com/sheerun/prettier-standard#readme
 
-
 ### auto create pull requests
 
 - https://github.com/thomaseizinger/create-pull-request
