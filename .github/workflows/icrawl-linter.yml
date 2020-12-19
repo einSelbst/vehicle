@@ -10,8 +10,8 @@ jobs:
         steps:
             - name: Checkout to repository
               uses: actions/checkout@v2
-            - name: Configure files
-              run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
+            # - name: Configure files
+              # run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
             - name: Setup Node.js v14
               uses: actions/setup-node@v2.1.4
               with:
@@ -26,8 +26,8 @@ jobs:
         steps:
             - name: Checkout to repository
               uses: actions/checkout@v2
-            - name: Configure files
-              run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
+            # - name: Configure files
+              # run: mv src/botconfig-example.ts src/botconfig.ts | mv .env.example .env
             - name: Setup Node.js v14
               uses: actions/setup-node@v2.1.4
               with:
