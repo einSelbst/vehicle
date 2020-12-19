@@ -1,4 +1,9 @@
-on: [push]
+# needs updated url
+# on: [push]
+on:
+  schedule:
+    # Every monday morning
+    - cron: '0 6 * * 1'
 
 jobs:
   zap_scan:
@@ -14,6 +19,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
-          target: 'https://www.zaproxy.org/'
+          # target: 'https://www.zaproxy.org/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'

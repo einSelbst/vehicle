@@ -107,6 +107,9 @@ Here's how this example repo was set up:
 ### OWASP
 
 - https://github.com/marketplace/actions/owasp-zap-full-scan
+- https://www.zaproxy.org/blog/2020-05-15-dynamic-application-security-testing-with-zap-and-github-actions/
+- https://github.com/DFE-Digital/get-teacher-training-adviser-service/tree/b1697f15fb72e17cddaf1da50664e3dd30d3011d
+- https://github.com/kmorisoto/owasp-test-webapp/blob/daba4964cf3f6c02061087d3f34ec0d3e9fe18e5/.github/workflows/zap_full.yml (set ip address)
 
 ### under consideration
 
@@ -117,6 +120,7 @@ Here's how this example repo was set up:
 - https://github.com/marketplace/actions/create-a-release
 - https://github.com/marketplace/actions/milestone-closer
 - https://github.com/marketplace/actions/wakatime-stat-update-action
+- https://github.com/DevopsHackathonDemo/DevOps-demo/tree/ae1954831e2f7821ff2d0742377bf906d0f0adef
 
 ## License
 
