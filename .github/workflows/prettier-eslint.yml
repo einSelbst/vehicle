@@ -27,6 +27,7 @@ jobs:
       # Install your dependencies
       - run: |
           npm ci
+          npm i -g prettier
 
       # Run ESLint
       - name: Run ESLint
