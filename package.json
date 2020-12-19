@@ -16,6 +16,7 @@
     "bundlewatch": "bundlewatch || true",
     "vercel-build": "next build",
     "lint": "eslint . --fix",
+    "linter": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier-standard --format"
   },
   "lint-staged": {

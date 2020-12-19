@@ -31,7 +31,8 @@ jobs:
 
       # Run ESLint
       - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npm run linter
+        # run: eslint . --ext .js,.jsx,.ts,.tsx
 
       # Run Prettier
       - run: npm run format
