@@ -37,7 +37,8 @@ jobs:
       - name: ESLint Plus
         # You may pin to the exact commit or the version.
         # uses: bradennapier/eslint-plus-action@972d934f4b5b41945c4f489dc49717c80eb8be4c
-        uses: bradennapier/eslint-plus-action@v3.4.2
+        # uses: bradennapier/eslint-plus-action@v3.4.2
+        uses: gnosis/safe-react-eslint-plus-action
           # Should an issue comment only occur when there are warnings or errors?
           # issueSummaryOnlyOnEvent: # optional
           # Optionally provide a comma-separated list of extensions (checks js, jsx, ts, tsx by default)
