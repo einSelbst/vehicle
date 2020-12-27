@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
         if: |
-          startsWith(github.head_ref, 'einselbst') == false &&
-          startsWith(github.head_ref, 'dependabot') == false &&
-          startsWith(github.head_ref, 'renovate') == false
+          contains(github.head_ref, 'einSelbst') == false &&
+          contains(github.head_ref, 'dependabot') == false &&
+          contains(github.head_ref, 'renovate') == false
 
       - name: Extract branch name
         if: |
