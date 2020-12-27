@@ -39,7 +39,7 @@ jobs:
           # Should the bot provide a summary of the results as a comment? Defaults to true
           issueSummary: compact # optional
           # Changes the PR comment to be "full" (as shown on actions page) or "compact", defaults to compact
-          issueSummaryType: true # optional
+          issueSummaryType: full # optional
           # When issueSummary is enabled, allows having the bot edit or refresh the comment on each new push
           issueSummaryMethod: edit # optional
           # Should an issue comment only occur when there are warnings or errors?
