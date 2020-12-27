@@ -37,24 +37,7 @@ jobs:
       - name: ESLint Plus
         # You may pin to the exact commit or the version.
         # uses: bradennapier/eslint-plus-action@972d934f4b5b41945c4f489dc49717c80eb8be4c
-        uses: bradennapier/eslint-plus-action@v3
-        with:
-          # GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
-          github-token: ${{ github.token }}
-          # By setting this to "false", only errors will be annotated
-          reportWarnings: true # optional
-          # Report eslint warnings as errors? Defaults to false
-          reportWarningsAsErrors: true # optional
-          # Report any file paths which were ignored? Defaults to false
-          reportIgnoredFiles: true # optional
-          # Report suggestions with the rules? Defaults to true
-          reportSuggestions: true # optional
-          # Should the bot provide a summary of the results as a comment? Defaults to true
-          issueSummary: compact # optional
-          # Changes the PR comment to be "full" (as shown on actions page) or "compact", defaults to compact
-          issueSummaryType: full # optional
-          # When issueSummary is enabled, allows having the bot edit or refresh the comment on each new push
-          issueSummaryMethod: edit # optional
+        uses: bradennapier/eslint-plus-action@v3.4.2
           # Should an issue comment only occur when there are warnings or errors?
           # issueSummaryOnlyOnEvent: # optional
           # Optionally provide a comma-separated list of extensions (checks js, jsx, ts, tsx by default)
