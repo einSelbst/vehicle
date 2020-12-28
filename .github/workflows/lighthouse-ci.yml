@@ -8,6 +8,7 @@ env:
 
 jobs:
   lhci:
+    if: false
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:
