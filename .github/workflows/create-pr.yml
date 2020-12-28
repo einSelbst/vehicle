@@ -8,28 +8,20 @@ on:
 
 jobs:
   create-pr-on-push:
+    if: |
+      contains(github.ref, 'einSelbst') == false &&
+      contains(github.ref, 'dependabot') == false &&
+      contains(github.ref, 'renovate') == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
-        if: |
-          contains(github.head_ref, 'einSelbst') == false &&
-          contains(github.head_ref, 'dependabot') == false &&
-          contains(github.head_ref, 'renovate') == false
 
       - name: Extract branch name
-        if: |
-          startsWith(github.head_ref, 'einselbst') == false &&
-          startsWith(github.head_ref, 'dependabot') == false &&
-          startsWith(github.head_ref, 'renovate') == false
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
       - name: Create pull request
-        if: |
-          startsWith(github.head_ref, 'einselbst') == false &&
-          startsWith(github.head_ref, 'dependabot') == false &&
-          startsWith(github.head_ref, 'renovate') == false
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
