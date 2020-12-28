@@ -41,7 +41,7 @@ jobs:
         uses: gnosis/safe-react-eslint-plus-action@main
         with:
           # GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
-          github-token: ${{ secrets:GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           # By setting this to "false", only errors will be annotated
           reportWarnings: true # optional
           # Report eslint warnings as errors? Defaults to false
