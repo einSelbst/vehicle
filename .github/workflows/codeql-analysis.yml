@@ -22,6 +22,7 @@ on:
 
 jobs:
   analyze:
+    if: false # only works for public repos
     name: Analyze
     runs-on: ubuntu-latest
 

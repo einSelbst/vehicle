@@ -16,7 +16,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm ci
+      - run: npm ci --no-audit --prefer-offline
       - run: npm run format
       - run: git status
       # commit any changed files

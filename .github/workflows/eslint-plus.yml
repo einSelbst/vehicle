@@ -13,6 +13,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   eslint:
+    if: false # giving up on this for now
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,46 +22,60 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Setup npm cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          CI: true
+
       - name: ESLint Plus
         # You may pin to the exact commit or the version.
         # uses: bradennapier/eslint-plus-action@972d934f4b5b41945c4f489dc49717c80eb8be4c
-        uses: bradennapier/eslint-plus-action@v3
+        # uses: bradennapier/eslint-plus-action@v3.4.2
+        uses: gnosis/safe-react-eslint-plus-action@main
         with:
           # GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           # By setting this to "false", only errors will be annotated
-          reportWarnings: # optional
+          reportWarnings: true # optional
           # Report eslint warnings as errors? Defaults to false
-          reportWarningsAsErrors: # optional
+          reportWarningsAsErrors: true # optional
           # Report any file paths which were ignored? Defaults to false
-          reportIgnoredFiles: # optional
+          reportIgnoredFiles: true # optional
           # Report suggestions with the rules? Defaults to true
-          reportSuggestions: # optional
+          reportSuggestions: true # optional
           # Should the bot provide a summary of the results as a comment? Defaults to true
-          issueSummary: # optional
+          issueSummary: compact # optional
           # Changes the PR comment to be "full" (as shown on actions page) or "compact", defaults to compact
-          issueSummaryType: # optional
+          issueSummaryType: full # optional
           # When issueSummary is enabled, allows having the bot edit or refresh the comment on each new push
-          issueSummaryMethod: # optional
+          issueSummaryMethod: edit # optional
           # Should an issue comment only occur when there are warnings or errors?
-          issueSummaryOnlyOnEvent: # optional
+          # issueSummaryOnlyOnEvent: # optional
           # Optionally provide a comma-separated list of extensions (checks js, jsx, ts, tsx by default)
-          extensions: # optional
+          # extensions: # optional
           # Optionally provide a glob to include. Will include all if not provided
-          includeGlob: # optional
+          # includeGlob: # optional
           # Optionally provide ignore pattern to use.  Will also use eslintignore unless specified
-          ignoreGlob: # optional
+          # ignoreGlob: # optional
           # A config file to use, defaults to the default config file at process.cwd()
-          configFile: # optional
+          # configFile: # optional
           # Optional comma-separated list of rule paths to use
-          rulePaths: # optional
+          # rulePaths: # optional
           # Throw error if unmatched pattern is seen?  Defaults to false
-          errorOnUnmatchedPattern: # optional
+          # errorOnUnmatchedPattern: # optional
           # Use eslintrc?  Defaults to true
-          useEslintrc: # optional
+          # useEslintrc: # optional
           # Set to false to not use eslintignore. Defaults to true
-          useEslintIgnore: # optional
+          # useEslintIgnore: # optional
           # Run with --fix? Defaults to false
-          fix: # optional
+          # fix: true # optional
           # Force run npm ci (or yarn) for you. If you do not use this option, be sure to install the project dependencies before running this action.  By default it will run if a node_modules directory is not found or this is set to true
-          npmInstall: # optional, default is false
+          # npmInstall: # optional, default is false
