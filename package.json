@@ -48,7 +48,7 @@
     "webpack-stats-plugin": "1.0.3"
   },
   "dependencies": {
-    "@sentry/webpack-plugin": "1.14.0",
+    "@sentry/webpack-plugin": "1.14.1",
     "@zeit/next-source-maps": "0.0.3",
     "next": "10.0.5",
     "next-compose-plugins": "2.2.1",
