@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "git@github.com:StarpTech/next-localization.git",
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development next",
