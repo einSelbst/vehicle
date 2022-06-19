@@ -53,7 +53,7 @@
     "next": "10.0.7",
     "next-compose-plugins": "2.2.1",
     "next-plugin-bundle-stats": "2.6.0",
-    "next-plugin-preact": "3.0.3",
+    "next-plugin-preact": "3.0.7",
     "preact": "10.5.12",
     "preact-render-to-string": "5.1.12",
     "react": "npm:@preact/compat@0.0.4",
